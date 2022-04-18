@@ -204,7 +204,7 @@ class DidaList(object):
     def createTask(
         self, 
         title: str,
-        projectId: str,
+        projectId: str="",
         parentId: str="",
         columnId: str="",
         tags: List=[],
@@ -218,7 +218,7 @@ class DidaList(object):
 
         Args:
             title (str): 任务名
-            projectId (str): 所属的清单ID
+            projectId (str): 所属的清单ID. Defaults to "".
             parentId (str, optional): 母任务ID. Defaults to "".
             columnId (str, optional): 分组ID. Defaults to "".
             tags (List, optional): 标签. Defaults to [].
@@ -525,8 +525,6 @@ if config.dida_genIDJson:
     scheduler.add_job(dida.genProjectIDJson, "interval", minutes=1, misfire_grace_time=45)
     scheduler.add_job(dida.genColumnIDJson, "interval", minutes=1, misfire_grace_time=45)
     scheduler.add_job(dida.genTaskIDJson, "interval", minutes=1, misfire_grace_time=45)
-
-#dida.updateCookie()
 
 export().dida = dida
 
