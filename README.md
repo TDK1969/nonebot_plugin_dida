@@ -21,8 +21,8 @@
     - [nonebot_plugin_apscheduler](https://pypi.org/project/nonebot-plugin-apscheduler/)
 
 # 近期更新
-[完整日志]()
-- ** v 1.0.0 **
+[完整日志](https://github.com/TDK1969/nonebot_plugin_dida/blob/main/file/source/changelog.md)
+- **v 1.0.0**
 ```
 正在准备1.0发布
 ```
@@ -48,7 +48,7 @@
 
     任务 —— `taskID.json`
 
-    各文件中的字段，详见[project.md](), [column.md](), [task.md]()
+    各文件中的字段，详见[project.md](https://github.com/TDK1969/nonebot_plugin_dida/blob/main/file/source/project.md), [column.md](https://github.com/TDK1969/nonebot_plugin_dida/blob/main/file/source/column.md), [task.md](https://github.com/TDK1969/nonebot_plugin_dida/blob/main/file/source/task.md)
 
 # 安装方式
 通过nb plugin安装（推荐）
@@ -102,5 +102,5 @@
 - 同时指定startDate和dueDate时，返回startDate-dueDate之间的任务
 
 ### 返回值
-返回一个列表，其中每个元素是一个任务的字典，见[task.md]() 
+返回一个列表，其中每个元素是一个任务的字典，见[task.md](https://github.com/TDK1969/nonebot_plugin_dida/blob/main/file/source/task.md) 
 
