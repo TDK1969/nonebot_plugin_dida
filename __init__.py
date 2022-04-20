@@ -533,7 +533,8 @@ class DidaList(object):
 dida = DidaList()
 scheduler = require("nonebot_plugin_apscheduler").scheduler
 scheduler.add_job(dida.updateCookie, "cron", day_of_week=6, hour=0, minute=0, second=0, misfire_grace_time=75)
-if config.dida_genIDJson:
+if config.dida_genid:
+    #修复bug
     logger.debug(f'[滴答清单]将生成ID文件')
     
     scheduler.add_job(dida.genProjectIDJson, "interval", minutes=1, misfire_grace_time=45)

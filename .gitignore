@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+columnsID.json
+cookie.json
+projectsID.json
+taskID.json
