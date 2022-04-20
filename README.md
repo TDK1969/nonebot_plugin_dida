@@ -16,7 +16,6 @@
 
 **已支持v2.0.0-beta.2**
 ## 依赖
-- 适配器: onebot v11
 - 插件:
     - [nonebot_plugin_apscheduler](https://pypi.org/project/nonebot-plugin-apscheduler/)
 
