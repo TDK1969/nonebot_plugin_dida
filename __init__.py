@@ -10,14 +10,6 @@ from os.path import abspath, dirname
 global_config = get_driver().config
 config = Config.parse_obj(global_config)
 
-# Export something for other plugin
-# export = nonebot.export()
-# export.foo = "bar"
-
-# @export.xxx
-# def some_function():
-#     pass
-
 class DidaAPI():
     def __init__(self) -> None:
         self.getProjects = "https://api.dida365.com/api/v2/projects"

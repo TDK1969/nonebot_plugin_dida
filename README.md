@@ -37,6 +37,8 @@
 - 类型: `str`
 - 说明: 滴答清单账号的密码
 
+**缺少以上两个配置项会抛出AttributeError**
+
 ## dida_genIDJson
 - 类型: `bool`
 - 默认值: True
