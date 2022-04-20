@@ -365,17 +365,39 @@ class DidaList(object):
                     return False
             
             if tags is not None:
-                if "tags" not in task or task["tags"] != tags:
+                if "tags" not in task or set(task["tags"]) & set(tags) == set(tags):
                     return False
 
             if priority is not None:
                 if task["priority"] != priority:
                     return False
             
-            if startDate is not None:
+            if startDate is not None and dueDate is not None:
+                if "startDate" in task and "dueDate" in task:
+                    taskStartDate = datetime.strptime(task["startDate"], "%Y-%m-%dT%H:%M:%S.000+0000")
+                    taskStartDate += timedelta(hours=8)
+                    taskDueDate = datetime.strptime(task["dueDate"], "%Y-%m-%dT%H:%M:%S.000+0000")
+                    taskDueDate += timedelta(hours=8)
+
+                    if not startDate <= taskStartDate <= taskDueDate <= dueDate:
+                        return False
+                else:
+                    return False
+
+            elif startDate is not None:
                 if "startDate" in task:
-                    startDateTime = datetime.strptime(task["startDate"], "%Y-%m-%dT%H:%M:%S.000+0000")
-                    if startDateTime.date() != startDate.date():
+                    taskDatetime = datetime.strptime(task["startDate"], "%Y-%m-%dT%H:%M:%S.000+0000")
+                    taskDatetime += timedelta(hours=8)
+                    if taskDatetime.date() != startDate.date():
+                        return False
+                else:
+                    return False
+            
+            elif dueDate is not None:
+                if "dueDate" in task:
+                    taskDatetime = datetime.strptime(task["dueDate"], "%Y-%m-%dT%H:%M:%S.000+0000")
+                    taskDatetime += timedelta(hours=8)
+                    if taskDatetime.date() != dueDate.date():
                         return False
                 else:
                     return False
