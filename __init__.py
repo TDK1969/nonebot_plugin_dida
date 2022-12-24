@@ -1,7 +1,7 @@
 import json
 import requests
 from typing import List, Tuple, Dict
-from nonebot import get_driver, export, logger, require
+from nonebot import get_driver, logger, require
 from .config import Config
 from datetime import datetime, timedelta
 from random import sample
