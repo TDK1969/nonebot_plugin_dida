@@ -531,7 +531,10 @@ class DidaList(object):
             json.dump(tasks, f, ensure_ascii=False, indent=4)
         
 dida = DidaList()
-scheduler = require("nonebot_plugin_apscheduler").scheduler
+
+require("nonebot_plugin_apscheduler")
+from nonebot_plugin_apscheduler import scheduler
+
 scheduler.add_job(dida.updateCookie, "cron", day_of_week=6, hour=0, minute=0, second=0, misfire_grace_time=75)
 if config.dida_genid:
     
@@ -541,5 +544,4 @@ if config.dida_genid:
     scheduler.add_job(dida.genColumnIDJson, "interval", minutes=1, misfire_grace_time=45)
     scheduler.add_job(dida.genTaskIDJson, "interval", minutes=1, misfire_grace_time=45)
 
-export().dida = dida
 
